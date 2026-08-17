@@ -1,0 +1,5 @@
+# Full-genome Registry V4 files: ~250 MB each, over GitHub's 100 MB limit.
+# Re-downloadable from https://screen.wenglab.org/downloads (see README.md).
+*.cCREs.bed
+ENCFF*.bed
+!chr12q/*.bed

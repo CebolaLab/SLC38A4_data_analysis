@@ -1,0 +1,61 @@
+# Manifest: per-biosample ENCODE Registry V4 cCRE files -> biosample
+#
+# RESTORED 30 July 2026 from the copy saved at chr12q/manifest.tsv, which disappeared
+# from disk (OneDrive sync) shortly after being written. Content is as filled in;
+# please spot-check before relying on it.
+#
+# WHAT IS PREFILLED (verified from the file contents):
+#   file            - filename in chr12q/
+#   classification  - FULL      = DNase + H3K4me3 + H3K27ac + CTCF assayed (col 11
+#                                 'All-data/Full-classification'); can return PLS/pELS/dELS
+#                     PARTIAL   = DNase only ('Missing-data/Partial-classification');
+#                                 can ONLY return Low-DNase or CA-only
+#                     CHIP_ONLY = one or two ChIP marks assayed with NO DNase (col 11 is still
+#                                 'Missing-data/Partial-classification', but unlike PARTIAL these
+#                                 files cannot call Low-DNase/CA-only either). Elements carry raw
+#                                 signal labels instead of standard cCRE classes (e.g. High-H3K4me3,
+#                                 High-H3K27ac, High-CTCF, Unclassified) - see active_classes_on_12q.
+#   lookup          - the exact ENCODE page for the first accession in the filename
+#   biosample_group - ENCODE labels collapsed into biosample categories. 'liver tissue',
+#                     'right lobe of liver' and 'left lobe of liver' are all bulk liver and
+#                     are grouped as liver_tissue. Categories:
+#                       liver_tissue           whole liver, any lobe            (13 files)
+#                       primary_hepatocyte     isolated primary hepatocytes      (1 file)
+#                       sc_derived_hepatocyte  H9-derived hepatocyte-like cells  (1 file)
+#                       hepatoma_line          HepG2, HuH-7, Huh7.5              (3 files)
+#                     Reporting by this column avoids implying 18 independent biosample
+#                     types when several files share a label.
+#
+#
+# VALIDATED against the file contents on 30 July 2026: all 18 files present and unique,
+# classification matches the data in every case (3 FULL / 10 PARTIAL / 5 CHIP_ONLY), and
+# all group values fall within {primary, cell_line, in_vitro_differentiated}.
+#
+# group vocabulary:
+#   primary                  liver tissue, liver lobe, hepatocyte, other primary liver cells
+#   cell_line                HepG2, HuH-7, Hep3B and other hepatoma/hepatoblastoma lines
+#   in_vitro_differentiated  stem-cell-derived hepatocyte-like cells (here: H9-derived)
+#
+# NOTE FOR THE METHODS: H9 (WA09) is a human EMBRYONIC stem cell line, not an iPSC line.
+# Supplementary Methods 5.3 currently says "induced pluripotent stem cells" and needs
+# correcting to embryonic (or the neutral "stem-cell-derived").
+#
+file	biosample	group	biosample_group	classification	lookup	active_classes_on_12q
+ENCFF020EPF_ENCFF917LFF_ENCFF764VSN_ENCFF005YBS.chr12q.bed	right lobe of liver	primary	liver_tissue	FULL	https://www.encodeproject.org/files/ENCFF020EPF/	CA-CTCF,CA-H3K4me3,CA-only,PLS,dELS,pELS
+ENCFF412PVV.chr12q.bed	left lobe of liver	primary	liver_tissue	PARTIAL	https://www.encodeproject.org/files/ENCFF412PVV/	CA-only,Low-DNase
+ENCFF546MZK_ENCFF732PJK_ENCFF795ONN_ENCFF357NFO.chr12q.bed	HepG2	cell_line	hepatoma_line	FULL	https://www.encodeproject.org/files/ENCFF546MZK/	CA-CTCF,CA-H3K4me3,CA-TF,CA-only,PLS,dELS,pELS
+ENCFF693PZG.chr12q.bed	Huh7.5	cell_line	hepatoma_line	PARTIAL	https://www.encodeproject.org/files/ENCFF693PZG/	CA-only,Low-DNase
+ENCFF826YPV.chr12q.bed	hepatocyte	primary	primary_hepatocyte	PARTIAL	https://www.encodeproject.org/files/ENCFF826YPV/	CA-only,Low-DNase
+ENCFF902EEH_ENCFF137IUT_ENCFF347LDC_ENCFF491FMJ.chr12q.bed	hepatocyte originated from H9	in_vitro_differentiated	sc_derived_hepatocyte	FULL	https://www.encodeproject.org/files/ENCFF902EEH/	CA-CTCF,CA-H3K4me3,CA-TF,CA-only,PLS,dELS,pELS
+ENCFF082KAC.chr12q.bed	right lobe of liver	primary	liver_tissue	PARTIAL	https://www.encodeproject.org/files/ENCFF082KAC/	CA-only,Low-DNase
+ENCFF321UXJ.chr12q.bed	liver tissue	primary	liver_tissue	PARTIAL	https://www.encodeproject.org/files/ENCFF321UXJ/	CA-only,Low-DNase
+ENCFF466DQD.chr12q.bed	right lobe of liver	primary	liver_tissue	PARTIAL	https://www.encodeproject.org/files/ENCFF466DQD/	CA-only,Low-DNase
+ENCFF578WNN.chr12q.bed	HuH-7	cell_line	hepatoma_line	PARTIAL	https://www.encodeproject.org/files/ENCFF578WNN/	CA-only,Low-DNase
+ENCFF606YDZ.chr12q.bed	right lobe of liver	primary	liver_tissue	PARTIAL	https://www.encodeproject.org/files/ENCFF606YDZ/	CA-only,Low-DNase
+ENCFF634BMR.chr12q.bed	right lobe of liver	primary	liver_tissue	PARTIAL	https://www.encodeproject.org/files/ENCFF634BMR/	CA-only,Low-DNase
+ENCFF749WFL.chr12q.bed	liver tissue	primary	liver_tissue	PARTIAL	https://www.encodeproject.org/files/ENCFF749WFL/	CA-only,Low-DNase
+ENCFF053IVC_ENCFF275OLK.chr12q.bed	liver tissue	primary	liver_tissue	CHIP_ONLY	https://www.encodeproject.org/files/ENCFF053IVC/	High-H3K27ac,High-H3K4me3,High-H3K4me3+High-H3K27ac,Unclassified
+ENCFF280QYJ_ENCFF853WPX.chr12q.bed	liver tissue	primary	liver_tissue	CHIP_ONLY	https://www.encodeproject.org/files/ENCFF280QYJ/	High-H3K27ac,High-H3K4me3,High-H3K4me3+High-H3K27ac,Unclassified
+ENCFF471TIS_ENCFF218ECO.chr12q.bed	liver tissue	primary	liver_tissue	CHIP_ONLY	https://www.encodeproject.org/files/ENCFF471TIS/	High-H3K27ac,High-H3K4me3,High-H3K4me3+High-H3K27ac,Unclassified
+ENCFF725LBV.chr12q.bed	liver tissue	primary	liver_tissue	CHIP_ONLY	https://www.encodeproject.org/files/ENCFF725LBV/	High-CTCF,Unclassified
+ENCFF962JEC.chr12q.bed	liver tissue	primary	liver_tissue	CHIP_ONLY	https://www.encodeproject.org/files/ENCFF962JEC/	High-H3K4me3,Unclassified

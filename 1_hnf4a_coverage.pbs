@@ -1,0 +1,142 @@
+#!/bin/bash
+#PBS -l walltime=04:00:00
+#PBS -l select=1:ncpus=8:mem=32gb
+#PBS -N hnf4a_coverage
+# =============================================================================
+# Normalised, STRAND-AWARE RNA-seq coverage tracks for the HNF4A locus
+# (P1 vs P2 promoters). SLC38A4 KO vs WT Huh7.5.
+#
+# Step 0 auto-detects library strandedness with RSeQC infer_experiment.py and
+# picks the correct --filterRNAstrand so the primary bigWig is the SENSE strand
+# for + strand genes (HNF4A is on +). An antisense track is also written for QC.
+#
+# Outputs:
+#   per_sample/<sample>.bpm.bw            - sense-strand (or unstranded) per sample
+#   per_sample/<sample>.antisense.bpm.bw  - antisense (QC; only if stranded)
+#   per_group/<WT|KO1|KO2>.bpm.bw         - sense-strand per condition (for the figure)
+#   per_group/<...>.antisense.bpm.bw      - antisense per condition (QC)
+#
+# Normalisation: BPM (bins per million, TPM-like) -> tracks comparable across
+# samples/conditions.
+# =============================================================================
+set -euo pipefail
+
+# ---- paths (EDIT) -----------------------------------------------------------
+BAM_DIR=/rds/general/user/idossant/projects/alcoholichepatitis/live/users/sratkinson/SLC38A4/X204SC21115349-Z01-F002/bam
+OUT_DIR=/rds/general/user/idossant/projects/cebolalab_collab/live/SLC38A4_MThursz_collab/SLC38A4_KO_reanalysis/coverage
+GTF=/rds/general/user/idossant/projects/cebola_lab_general/live/reference-genomes/ensembl-v96/Homo_sapiens.GRCh38.96.gtf   # Ensembl 96; chroms are '20' (no 'chr')
+mkdir -p "$OUT_DIR"/{per_sample,per_group,merged_bam}
+
+# ---- environment ------------------------------------------------------------
+# Find the conda module on your cluster first:
+#   module spider anaconda ; module spider miniforge
+#   module avail 2>&1 | grep -iE 'conda|mamba|forge'
+# Then load it below (edit to the exact name printed). Common on the new
+# Imperial HPC: 'miniforge/3' or an EasyBuild 'Anaconda3/<version>'.
+# The cluster's miniforge module is only a bootstrap stub (no conda binary),
+# so we use a personal miniforge + a prefix env in your conda_environments folder.
+# ONE-TIME setup on a login node:
+#   wget -q https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+#   bash Miniforge3-Linux-x86_64.sh -b -p $HOME/miniforge3
+#   source $HOME/miniforge3/etc/profile.d/conda.sh
+#   conda create -y -p /rds/general/user/idossant/home/conda_environments/coverage \
+#          -c bioconda -c conda-forge \
+#          deeptools'>=3.5' samtools rseqc ucsc-gtftogenepred ucsc-genepredtobed pygenometracks
+CONDA_ROOT="$HOME/miniforge3"                                                   # <-- EDIT if base conda is elsewhere
+ENV_PREFIX="/rds/general/user/idossant/home/conda_environments/coverage"
+source "$CONDA_ROOT/etc/profile.d/conda.sh"
+
+# ONE-TIME env setup on a login node (after `module load miniforge/3`):
+#   conda create -n coverage -c bioconda -c conda-forge \
+#          deeptools'>=3.5' samtools rseqc ucsc-gtftogenepred ucsc-genepredtobed pygenometracks -y
+conda activate "$ENV_PREFIX"
+THREADS=8
+
+# ---- sample -> group map ----------------------------------------------------
+declare -A GROUP
+shopt -s nullglob
+for f in "$BAM_DIR"/*.bam; do
+  b=$(basename "$f" .bam)
+  case "$b" in
+    C12*)         GROUP[$b]=KO1 ;;
+    P1_7*|P1.7*)  GROUP[$b]=KO2 ;;
+    SCWT*)        GROUP[$b]=WT  ;;
+    *) echo "WARN: ungrouped BAM '$b' (skipping)"; continue ;;
+  esac
+done
+echo "== Discovered BAMs =="
+for b in "${!GROUP[@]}"; do echo "  $b -> ${GROUP[$b]}"; done
+[[ ${#GROUP[@]} -gt 0 ]] || { echo "ERROR: no BAMs matched in $BAM_DIR"; exit 1; }
+
+any_bam=$(ls "$BAM_DIR"/*.bam | head -1)
+[[ -f "$any_bam.bai" || -f "${any_bam%.bam}.bai" ]] || samtools index -@ "$THREADS" "$any_bam"
+
+# ---- sanity: genome build / chromosome naming (READ THIS in the log) --------
+echo "== @SQ for chr 20 (confirm naming + build) =="
+samtools view -H "$any_bam" | grep '^@SQ' | grep -E 'SN:(chr)?20\b' || echo "  (no chr20 @SQ - check naming!)"
+
+# ---- STEP 0: detect strandedness (RSeQC) ------------------------------------
+BED="$OUT_DIR/gene_model.bed12"
+if [[ ! -f "$BED" ]]; then
+  echo "== Building BED12 gene model from GTF =="
+  gtfToGenePred -genePredExt "$GTF" "$OUT_DIR/tmp.genePred"
+  genePredToBed "$OUT_DIR/tmp.genePred" "$BED"
+  rm -f "$OUT_DIR/tmp.genePred"
+fi
+
+echo "== RSeQC infer_experiment.py on $(basename "$any_bam") =="
+infer_experiment.py -r "$BED" -i "$any_bam" -s 400000 | tee "$OUT_DIR/infer_experiment.txt"
+
+# Parse the two strand fractions and choose the SENSE flag for + strand genes.
+# deepTools --filterRNAstrand assumes a dUTP (reverse/fr-firststrand) library:
+#   reverse-stranded library -> +strand(sense) = 'forward'
+#   forward-stranded library -> +strand(sense) = 'reverse'  (assumption inverted)
+#   unstranded               -> no filter
+read -r STRAND_MODE SENSE_FLAG ANTI_FLAG < <(python3 - "$OUT_DIR/infer_experiment.txt" <<'PYEOF'
+import sys, re
+d = dict((k, float(v)) for k, v in
+         re.findall(r'"([^"]+)":\s*([0-9.]+)', open(sys.argv[1]).read()))
+fwd = next((v for k, v in d.items() if '1++' in k or k.startswith('++')), 0.0)  # fr-secondstrand
+rev = next((v for k, v in d.items() if '1+-' in k or k.startswith('+-')), 0.0)  # fr-firststrand / dUTP
+if max(fwd, rev) < 0.60:
+    print("unstranded none none")
+elif rev >= fwd:
+    print("reverse forward reverse")   # dUTP: sense(+) = forward
+else:
+    print("forward reverse forward")   # fr-secondstrand: sense(+) = reverse
+PYEOF
+)
+echo "== Detected library: STRAND_MODE=$STRAND_MODE  (sense flag for + strand = $SENSE_FLAG) =="
+echo "   Sanity check after rendering: the SENSE track should dominate over HNF4A"
+echo "   and other + strand genes; if the ANTISENSE track lights up instead, swap the flags."
+
+# ---- helper: normalised bigWig(s) for a BAM ---------------------------------
+make_bw () {  # $1=bam  $2=out_prefix
+  local bam="$1" pref="$2"
+  if [[ "$SENSE_FLAG" == "none" ]]; then
+    bamCoverage -b "$bam" -o "${pref}.bpm.bw" --normalizeUsing BPM --binSize 10 -p "$THREADS"
+  else
+    bamCoverage -b "$bam" -o "${pref}.bpm.bw"           --filterRNAstrand "$SENSE_FLAG" --normalizeUsing BPM --binSize 10 -p "$THREADS"
+    bamCoverage -b "$bam" -o "${pref}.antisense.bpm.bw" --filterRNAstrand "$ANTI_FLAG"  --normalizeUsing BPM --binSize 10 -p "$THREADS"
+  fi
+}
+
+# ---- STEP 1: per-sample tracks ----------------------------------------------
+for b in "${!GROUP[@]}"; do
+  bam="$BAM_DIR/$b.bam"
+  [[ -f "$bam.bai" || -f "${bam%.bam}.bai" ]] || samtools index -@ "$THREADS" "$bam"
+  make_bw "$bam" "$OUT_DIR/per_sample/${b}"
+done
+
+# ---- STEP 2: per-group merged BAM -> one track per condition ----------------
+for grp in WT KO1 KO2; do
+  members=()
+  for b in "${!GROUP[@]}"; do [[ "${GROUP[$b]}" == "$grp" ]] && members+=("$BAM_DIR/$b.bam"); done
+  [[ ${#members[@]} -gt 0 ]] || { echo "WARN: no members for $grp"; continue; }
+  echo "== Merging $grp (${#members[@]} BAMs) =="
+  samtools merge -f -@ "$THREADS" "$OUT_DIR/merged_bam/${grp}.bam" "${members[@]}"
+  samtools index -@ "$THREADS" "$OUT_DIR/merged_bam/${grp}.bam"
+  make_bw "$OUT_DIR/merged_bam/${grp}.bam" "$OUT_DIR/per_group/${grp}"
+done
+
+echo "DONE. Figure tracks (sense strand): $OUT_DIR/per_group/{WT,KO1,KO2}.bpm.bw"

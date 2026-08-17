@@ -1,0 +1,30 @@
+{
+  "notebook": "Fig5_LD_expansion_cCRE_filtering.ipynb (Part A -- consolidated from the former SuppFig_SLC38A4_CAGE_TSS_scan.ipynb)",
+  "generated_utc": "2026-08-04T17:37:04.734531+00:00",
+  "cage_source": "FANTOM5 (CNhs accessions in filenames), hg38 CTSS",
+  "window": {
+    "chrom": "chr12",
+    "start": 46740000,
+    "end": 46855000
+  },
+  "cluster_gap_bp": 20,
+  "min_cluster_tpm": 0.5,
+  "min_hep_donors_for_reproducible": 2,
+  "library_sizes": {
+    "Hepatocyte_donor1": 2305396,
+    "Hepatocyte_donor2": 2149574,
+    "Hepatocyte_donor3": 3589381,
+    "Liver_adult_pool1": 12532192
+  },
+  "gene_id": "ENSG00000139209",
+  "canonical_transcript_id": "ENST00000266579",
+  "canonical_tss_grch38": 46825997,
+  "n_consensus_clusters": 549,
+  "n_reproducible_clusters": 54,
+  "chromatin_panels": {
+    "PHH_ATAC_replicated": "liver_cCREs/CebolaLab_CREs/PHH_CebolaLab/replicated_peaks.bed",
+    "ENCODE_liver_ATAC_replicated": "liver_cCREs/CebolaLab_CREs/ENCODE_Liver/ATAC/Liver_ATAC_replicated_peaks.bed",
+    "H3K27ac_replicated_in2": "liver_cCREs/CebolaLab_CREs/ENCODE_Liver/H3K27ac/replicated_peaks_in_2.bed"
+  },
+  "registry_bed": "liver_cCREs/chr12q/liver.all.cCREs.chr12q.bed"
+}

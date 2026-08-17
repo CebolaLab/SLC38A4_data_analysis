@@ -1,0 +1,2 @@
+track name="SLC38A4 prioritised proxies (R2>=0.7, liver-active cCRE)" description="LD proxies of rs11183620 with R2>=0.7 (GBR) in a cCRE (cCREregistry) active in >=1 liver biosample; score=R2x1000; colour=cCRE class (red PLS, orange pELS, yellow dELS, blue CTCF-only, black lead variant)" itemRgb="On" visibility=pack useScore=0
+chr12	46831287	46831288	rs4994910_Distal enhancer_r2=0.719	719	.	46831287	46831288	255,205,0

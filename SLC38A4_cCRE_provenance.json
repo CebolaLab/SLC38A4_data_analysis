@@ -1,0 +1,294 @@
+{
+  "generated_utc": "2026-08-01T17:19:31+00:00",
+  "assembly": "GRCh38/hg38 throughout (no liftover)",
+  "lead_variant": {
+    "rsid": "rs11183620",
+    "chrom": "12",
+    "pos_grch38": 46818587
+  },
+  "window_kb": 250,
+  "r2_threshold": 0.7,
+  "population": "GBR",
+  "ld_sources": {
+    "ldlink": {
+      "endpoint": "https://ldlink.nih.gov/LDlinkRest/ldproxy",
+      "population": "GBR",
+      "genome_build": "grch38",
+      "used": true,
+      "n_proxies": 2151
+    },
+    "ensembl": {
+      "endpoint": "https://rest.ensembl.org/ld/human",
+      "population": "1000GENOMES:phase_3:GBR",
+      "used": true,
+      "n_proxies": 401
+    }
+  },
+  "ccre_registry": {
+    "source": "UCSC REST API",
+    "genome": "hg38",
+    "track": "cCREregistry",
+    "longLabel": "ENCODE4 Registry of candidate Cis-Regulatory Elements (cCREs)",
+    "n_elements_in_window": 460
+  },
+  "liver_activity_filter": {
+    "applied": true,
+    "source": "SCREEN per-biosample Registry V4 files (chr12q subsets)",
+    "ccre_dir": "liver_cCREs/chr12q",
+    "manifest": "liver_cCREs/manifest.tsv",
+    "biosamples": [
+      {
+        "file": "ENCFF020EPF_ENCFF917LFF_ENCFF764VSN_ENCFF005YBS.chr12q.bed",
+        "biosample": "right lobe of liver",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "FULL"
+      },
+      {
+        "file": "ENCFF412PVV.chr12q.bed",
+        "biosample": "left lobe of liver",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF546MZK_ENCFF732PJK_ENCFF795ONN_ENCFF357NFO.chr12q.bed",
+        "biosample": "HepG2",
+        "group": "cell_line",
+        "biosample_group": "hepatoma_line",
+        "classification": "FULL"
+      },
+      {
+        "file": "ENCFF693PZG.chr12q.bed",
+        "biosample": "Huh7.5",
+        "group": "cell_line",
+        "biosample_group": "hepatoma_line",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF826YPV.chr12q.bed",
+        "biosample": "hepatocyte",
+        "group": "primary",
+        "biosample_group": "primary_hepatocyte",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF902EEH_ENCFF137IUT_ENCFF347LDC_ENCFF491FMJ.chr12q.bed",
+        "biosample": "hepatocyte originated from H9",
+        "group": "in_vitro_differentiated",
+        "biosample_group": "sc_derived_hepatocyte",
+        "classification": "FULL"
+      },
+      {
+        "file": "ENCFF082KAC.chr12q.bed",
+        "biosample": "right lobe of liver",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF321UXJ.chr12q.bed",
+        "biosample": "liver tissue",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF466DQD.chr12q.bed",
+        "biosample": "right lobe of liver",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF578WNN.chr12q.bed",
+        "biosample": "HuH-7",
+        "group": "cell_line",
+        "biosample_group": "hepatoma_line",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF606YDZ.chr12q.bed",
+        "biosample": "right lobe of liver",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF634BMR.chr12q.bed",
+        "biosample": "right lobe of liver",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF749WFL.chr12q.bed",
+        "biosample": "liver tissue",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "PARTIAL"
+      },
+      {
+        "file": "ENCFF053IVC_ENCFF275OLK.chr12q.bed",
+        "biosample": "liver tissue",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "CHIP_ONLY"
+      },
+      {
+        "file": "ENCFF280QYJ_ENCFF853WPX.chr12q.bed",
+        "biosample": "liver tissue",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "CHIP_ONLY"
+      },
+      {
+        "file": "ENCFF471TIS_ENCFF218ECO.chr12q.bed",
+        "biosample": "liver tissue",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "CHIP_ONLY"
+      },
+      {
+        "file": "ENCFF725LBV.chr12q.bed",
+        "biosample": "liver tissue",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "CHIP_ONLY"
+      },
+      {
+        "file": "ENCFF962JEC.chr12q.bed",
+        "biosample": "liver tissue",
+        "group": "primary",
+        "biosample_group": "liver_tissue",
+        "classification": "CHIP_ONLY"
+      }
+    ],
+    "active_definition": {
+      "ccre_active": [
+        "CA-CTCF",
+        "CA-H3K4me3",
+        "CA-TF",
+        "CA-only",
+        "PLS",
+        "dELS",
+        "pELS"
+      ],
+      "mark_high": "High-* labels in ChIP-only files (supporting evidence, not a cCRE class)",
+      "not_active": [
+        "Low-DNase",
+        "Unclassified"
+      ]
+    },
+    "aggregate_crosschecks": {
+      "liver.all": "liver_cCREs/chr12q/liver.all.cCREs.chr12q.bed"
+    },
+    "include_liver_cell_lines": true,
+    "region_subset": "chr12q (end > 37,200,000, GRCh38)",
+    "regulatory_evidence_filter": {
+      "tier1_core_panel": "PHH",
+      "tier2_mark_panels": [
+        "H3K27ac"
+      ],
+      "corroborating_panels": [
+        "ENCODE_liver"
+      ],
+      "definition": "the CRE core is a replicated ATAC peak in the core panel; a variant must lie inside that core, and H3K27ac is assessed only within it. Whole-liver ATAC corroborates but does not define the core. Registry V4 membership is annotation only.",
+      "panels": {
+        "PHH": {
+          "role": "accessibility",
+          "label": "primary human hepatocyte ATAC-seq (6 adult donors)",
+          "n_samples": 6,
+          "sample_files": [
+            "PHH180051-C_peaks.narrowPeak",
+            "PHH182851-C_peaks.narrowPeak",
+            "PHH183001-C_peaks.narrowPeak",
+            "PHH183231-C_peaks.narrowPeak",
+            "PHH191381-C_peaks.narrowPeak",
+            "PHH4190-C_peaks.narrowPeak"
+          ],
+          "replicated_file": "replicated_peaks.bed"
+        },
+        "ENCODE_liver": {
+          "role": "accessibility",
+          "label": "whole-liver ATAC-seq (6 ENCODE experiments, peaks called in-house)",
+          "n_samples": 6,
+          "sample_files": [
+            "ENCSR516CPW_peaks_SORTED.bed",
+            "ENCSR607BTF_peaks_SORTED.bed",
+            "ENCSR624ODL_peaks_SORTED.bed",
+            "ENCSR685ZMP_peaks_SORTED.bed",
+            "ENCSR836FIL_peaks_SORTED.bed",
+            "ENCSR952SPO_peaks_SORTED.bed"
+          ],
+          "replicated_file": "Liver_ATAC_replicated_peaks.bed"
+        },
+        "H3K27ac": {
+          "role": "activity",
+          "label": "liver H3K27ac ChIP-seq (4 ENCODE experiments, peaks called in-house)",
+          "n_samples": 4,
+          "sample_files": [
+            "ENCFF029CGS_pooled_macs2_peaks.broadPeak",
+            "ENCFF218ECO_pooled_macs2_peaks.broadPeak",
+            "ENCFF352AAW_pooled_macs2_peaks.broadPeak",
+            "ENCFF764VSN_pooled_macs2_peaks.broadPeak"
+          ],
+          "replicated_file": "replicated_peaks_in_2.bed"
+        }
+      }
+    },
+    "primary_terms": [
+      "\\bliver\\b",
+      "\\bhepatocyte",
+      "\\bhepatic\\b",
+      "hepatic stellate",
+      "cholangiocyte",
+      "\\bbile duct\\b",
+      "kupffer",
+      "lobe of liver",
+      "liver right lobe"
+    ],
+    "cell_line_terms": [
+      "\\bhepg2\\b",
+      "hep\\s*g2",
+      "huh[-\\s]?7",
+      "hep\\s*3b",
+      "plc/prf",
+      "sk[-\\s]?hep",
+      "hepatoblastoma",
+      "hepatocellular carcinoma"
+    ],
+    "matched_biosamples": [
+      "HepG2",
+      "HuH-7",
+      "Huh7.5",
+      "hepatocyte",
+      "hepatocyte originated from H9",
+      "left lobe of liver",
+      "liver tissue",
+      "right lobe of liver"
+    ],
+    "n_liver_active_proxies": 33,
+    "note": "the combined cCRE registry track is cell-type agnostic; liver activity was established from per-biosample classifications"
+  },
+  "intersection_method": "bedtools intersect",
+  "bedtools": {
+    "path": "/opt/homebrew/bin/bedtools",
+    "version": "bedtools v2.31.1",
+    "verified_against": "independent half-open interval calculation"
+  },
+  "counts": {
+    "proxies_in_window": 1485,
+    "proxies_passing_r2": 48,
+    "proxies_in_ccre": 394,
+    "proxies_in_liver_active_ccre": 33,
+    "shortlist": 1,
+    "threshold_source_dependent": 0
+  },
+  "bed_convention": "0-based half-open; 1-based SNP position p exported as [p-1, p)",
+  "package_versions": {
+    "python": "3.14.4",
+    "pandas": "3.0.2",
+    "requests": "2.34.2"
+  }
+}

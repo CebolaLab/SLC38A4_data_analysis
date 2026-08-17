@@ -1,0 +1,22 @@
+metabolite,group,log2fc,padj
+Histidine,System A substrate,0.6043,5.62e-06
+Alanine,System A substrate,0.3641,0.0001
+Threonine,System A substrate,0.2267,3.2e-06
+Serine,System A substrate,0.2103,0.0002
+Methionine,System A substrate,0.2065,0.0
+Lysine,System A substrate,0.1965,5.62e-06
+Asparagine,System A substrate,0.1942,0.0003
+Glutamine,System A substrate,0.1793,0.0
+Valine,System A substrate,0.1266,0.0073
+Glycine,System A substrate,0.122,0.0009
+Leucine,System A substrate,0.0639,0.5044
+Phenylalanine,System A substrate,0.0505,0.2382
+Tyrosine,System A substrate,0.0456,0.5425
+Proline,System A substrate,-0.2821,0.0157
+Citrulline,Urea-cycle intermediate,0.5037,0.0005
+Argininosuccinic acid,Urea-cycle intermediate,0.4342,0.0007
+Arginine,Urea-cycle intermediate,0.3817,0.0069
+Aspartic acid,Urea-cycle intermediate,-0.0606,0.0063
+N-Acetylglutamate,Carbamoyl-phosphate pathway,-0.1878,0.0093
+N-Carbamoyl-aspartate,Carbamoyl-phosphate pathway,-0.436,0.0
+Orotic acid,Carbamoyl-phosphate pathway,-0.7653,6.61e-06

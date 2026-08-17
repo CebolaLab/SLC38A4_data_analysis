@@ -1,0 +1,38 @@
+{
+  "generated_utc": "2026-07-30T10:26:26+00:00",
+  "notebook_version": "v2",
+  "supersedes": "_run_log/Table1_liftover_run1_incomplete.ipynb (aborted at chain download)",
+  "source_assembly": "GRCh37/hg19",
+  "target_assembly": "GRCh38/hg38",
+  "sources": {
+    "ensembl": {
+      "endpoint": "https://rest.ensembl.org",
+      "release": 116,
+      "assembly": "GRCh38.p14"
+    },
+    "dbsnp": {
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+      "db": "snp"
+    },
+    "chain_liftover": {
+      "urls": [
+        "https://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz",
+        "https://hgdownload-euro.soe.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz"
+      ],
+      "sha256": "5c0598e500ceb5a78c73086929e8ef993aec309bcafb595139b53d440b125a1d",
+      "used": true
+    }
+  },
+  "reference_base_verified": true,
+  "acceptance_rule": "Ensembl and dbSNP concordant on chr+pos; rsID not merged; no multi-mapping; reference base matches; dbSNP previous-assembly position matches Table 1 hg19 input",
+  "n_variants": 11,
+  "n_accepted": 11,
+  "n_flagged": 0,
+  "flagged": [],
+  "package_versions": {
+    "python": "3.14.4",
+    "pandas": "3.0.2",
+    "requests": "2.34.2",
+    "pyliftover": "0.4.1"
+  }
+}

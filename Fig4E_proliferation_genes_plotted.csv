@@ -1,0 +1,23 @@
+gene,role,group,logFC,FDR
+CXCL8,inhibitor,"CDK inhibitors /
+senescence",3.2161739732626,1.33266875006e-09
+CDKN2B,inhibitor,"CDK inhibitors /
+senescence",1.40999703138243,6.80471993058739e-16
+CDKN2A,inhibitor,"CDK inhibitors /
+senescence",0.797741467089337,2.77527153972091e-13
+CDKN1A,inhibitor,"CDK inhibitors /
+senescence",1.56533978622357,3.0413647613563494e-11
+CCNE2,checkpoint,"Checkpoint
+activation",1.14320164435334,3.0054759578807703e-09
+CDK2,checkpoint,"Checkpoint
+activation",0.773347223389113,8.14004428039834e-15
+CHEK2,checkpoint,"Checkpoint
+activation",0.487828268718814,7.14465532256121e-10
+MKI67,driver,"Proliferation
+drivers",-0.69271958008876,0.0630455071079318
+CCND1,driver,"Proliferation
+drivers",-0.810129987263808,5.6016128963134e-14
+MYCN,driver,"Proliferation
+drivers",-1.07279793646872,6.530258969616421e-10
+MYC,driver,"Proliferation
+drivers",-0.451200294795551,5.23778717980098e-08

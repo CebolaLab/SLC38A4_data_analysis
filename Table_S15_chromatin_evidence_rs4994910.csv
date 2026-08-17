@@ -1,0 +1,39 @@
+rsID,Position (GRCh38),Evidence layer,Assay panel,Panel role,Dataset / file,Biosample,Biosample category,Registry assay coverage,Covers variant,Peak interval (GRCh38),Peak width (bp),Distance: variant to peak summit (bp),Summit within 60 bp of variant,ENCODE Registry V4 class,Registry V4 class is 'active'
+rs4994910,46831288,individual sample,PHH,accessibility,PHH180051-C_peaks.narrowPeak,,,,True,"chr12:46,831,150-46,831,926",776.0,47,True,,
+rs4994910,46831288,individual sample,PHH,accessibility,PHH182851-C_peaks.narrowPeak,,,,True,"chr12:46,830,689-46,832,775",2086.0,11,True,,
+rs4994910,46831288,individual sample,PHH,accessibility,PHH183001-C_peaks.narrowPeak,,,,True,"chr12:46,830,902-46,832,211",1309.0,59,True,,
+rs4994910,46831288,individual sample,PHH,accessibility,PHH183231-C_peaks.narrowPeak,,,,True,"chr12:46,830,822-46,832,618",1796.0,558,False,,
+rs4994910,46831288,individual sample,PHH,accessibility,PHH191381-C_peaks.narrowPeak,,,,True,"chr12:46,830,742-46,832,775",2033.0,37,True,,
+rs4994910,46831288,individual sample,PHH,accessibility,PHH4190-C_peaks.narrowPeak,,,,True,"chr12:46,830,441-46,832,587",2146.0,967,False,,
+rs4994910,46831288,replicated set,PHH,accessibility,replicated_peaks.bed,,,,True,"chr12:46,830,712-46,832,570",1858.0,,,,
+rs4994910,46831288,individual sample,ENCODE_liver,accessibility,ENCSR516CPW_peaks_SORTED.bed,,,,True,"chr12:46,830,609-46,832,609",2000.0,,,,
+rs4994910,46831288,individual sample,ENCODE_liver,accessibility,ENCSR607BTF_peaks_SORTED.bed,,,,True,"chr12:46,830,592-46,832,584",1992.0,,,,
+rs4994910,46831288,individual sample,ENCODE_liver,accessibility,ENCSR624ODL_peaks_SORTED.bed,,,,True,"chr12:46,830,522-46,832,581",2059.0,,,,
+rs4994910,46831288,individual sample,ENCODE_liver,accessibility,ENCSR685ZMP_peaks_SORTED.bed,,,,True,"chr12:46,830,671-46,832,566",1895.0,,,,
+rs4994910,46831288,individual sample,ENCODE_liver,accessibility,ENCSR836FIL_peaks_SORTED.bed,,,,True,"chr12:46,830,704-46,832,609",1905.0,,,,
+rs4994910,46831288,individual sample,ENCODE_liver,accessibility,ENCSR952SPO_peaks_SORTED.bed,,,,True,"chr12:46,830,608-46,832,590",1982.0,,,,
+rs4994910,46831288,replicated set,ENCODE_liver,accessibility,Liver_ATAC_replicated_peaks.bed,,,,True,"chr12:46,830,552-46,832,613",2061.0,,,,
+rs4994910,46831288,individual sample,H3K27ac,activity,ENCFF029CGS_pooled_macs2_peaks.broadPeak,,,,True,"chr12:46,830,988-46,832,176",1188.0,,,,
+rs4994910,46831288,individual sample,H3K27ac,activity,ENCFF218ECO_pooled_macs2_peaks.broadPeak,,,,True,"chr12:46,830,556-46,832,432",1876.0,,,,
+rs4994910,46831288,individual sample,H3K27ac,activity,ENCFF352AAW_pooled_macs2_peaks.broadPeak,,,,True,"chr12:46,830,904-46,832,411",1507.0,,,,
+rs4994910,46831288,individual sample,H3K27ac,activity,ENCFF764VSN_pooled_macs2_peaks.broadPeak,,,,True,"chr12:46,830,672-46,832,659",1987.0,,,,
+rs4994910,46831288,replicated set,H3K27ac,activity,replicated_peaks_in_2.bed,,,,True,"chr12:46,830,610-46,832,635",2025.0,,,,
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF020EPF_ENCFF917LFF_ENCFF764VSN_ENCFF005YBS.chr12q.bed,right lobe of liver,liver_tissue,FULL,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF053IVC_ENCFF275OLK.chr12q.bed,liver tissue,liver_tissue,partial,True,,,,,"High-H3K4me3,High-H3K27ac",False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF082KAC.chr12q.bed,right lobe of liver,liver_tissue,partial,True,,,,,CA-only,True
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF280QYJ_ENCFF853WPX.chr12q.bed,liver tissue,liver_tissue,partial,True,,,,,"High-H3K4me3,High-H3K27ac",False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF321UXJ.chr12q.bed,liver tissue,liver_tissue,partial,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF412PVV.chr12q.bed,left lobe of liver,liver_tissue,partial,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF466DQD.chr12q.bed,right lobe of liver,liver_tissue,partial,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF471TIS_ENCFF218ECO.chr12q.bed,liver tissue,liver_tissue,partial,True,,,,,"High-H3K4me3,High-H3K27ac",False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF546MZK_ENCFF732PJK_ENCFF795ONN_ENCFF357NFO.chr12q.bed,HepG2,hepatoma_line,FULL,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF578WNN.chr12q.bed,HuH-7,hepatoma_line,partial,True,,,,,CA-only,True
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF606YDZ.chr12q.bed,right lobe of liver,liver_tissue,partial,True,,,,,CA-only,True
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF634BMR.chr12q.bed,right lobe of liver,liver_tissue,partial,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF693PZG.chr12q.bed,Huh7.5,hepatoma_line,partial,True,,,,,CA-only,True
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF725LBV.chr12q.bed,liver tissue,liver_tissue,partial,True,,,,,Unclassified,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF749WFL.chr12q.bed,liver tissue,liver_tissue,partial,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF826YPV.chr12q.bed,hepatocyte,primary_hepatocyte,partial,True,,,,,Low-DNase,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF902EEH_ENCFF137IUT_ENCFF347LDC_ENCFF491FMJ.chr12q.bed,hepatocyte originated from H9,sc_derived_hepatocyte,FULL,True,,,,,CA-H3K4me3,True
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,ENCFF962JEC.chr12q.bed,liver tissue,liver_tissue,partial,True,,,,,High-H3K4me3,False
+rs4994910,46831288,ENCODE Registry V4,Registry V4,annotation,liver.all (pooled aggregate),all liver biosamples,,pooled signal,True,,,,,dELS,True

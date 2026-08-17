@@ -1,0 +1,19 @@
+{
+  "generated": "2026-08-13T21:46:10Z",
+  "source_file": "luciferase_data/Nelisa_luciferase_metadata.xlsx",
+  "sheet": "Figure 2C",
+  "model": "log2(firefly/renilla) ~ construct + (1|experiment) + (1|experiment:construct), REML",
+  "outlier_exclusion": "Dixon test flags from the source file; excluded from model and figure",
+  "n_wells": 91,
+  "n_experiments": 3,
+  "construct_x_experiment_sd_log2": 0.7970602115090178,
+  "residual_sd_log2": 0.5648334199330463,
+  "reported_contrasts": "two pre-specified contrasts, reported unadjusted",
+  "multiple_testing": "Benjamini-Hochberg across all contrasts retained as a column only",
+  "versions": {
+    "python": "3.10.12",
+    "pandas": "2.3.3",
+    "statsmodels": "0.14.6",
+    "numpy": "2.2.6"
+  }
+}

@@ -1,0 +1,13 @@
+term,label,block,NES,FDR
+Cytosolic tRNA Aminoacylation R-HSA-379716,Cytosolic tRNA aminoacylation,aa_mtor,-2.042240098367411,0.0191172884662277
+Cellular Response To Starvation R-HSA-9711097,Cellular response to starvation,aa_mtor,-2.0273714099181976,0.0070804772097139
+Amino Acid Transport Across Plasma Membrane R-HSA-352230,Amino acid transport (plasma membrane),aa_mtor,-2.020291335782486,0.0063724294887425
+Response Of EIF2AK4 (GCN2) To Amino Acid Deficiency R-HSA-9633012,GCN2 (EIF2AK4) stress response,aa_mtor,-1.9714263527224485,0.0120368112565137
+mTORC1-mediated Signaling R-HSA-166208,mTORC1 signalling,aa_mtor,-1.88182931023872,0.0288276572109783
+Cap-dependent Translation Initiation R-HSA-72737,Cap-dependent translation initiation,aa_mtor,-1.7998912039468082,0.0345277388638405
+Cellular Senescence R-HSA-2559583,Cellular senescence,p53_senescence,1.7271211465748657,0.0256165531929355
+Stabilization Of P53 R-HSA-69541,Stabilization of p53,p53_senescence,1.7504104145155146,0.0207548584167443
+Senescence-Associated Secretory Phenotype (SASP) R-HSA-2559582,Senescence-associated secretory phenotype,p53_senescence,1.7767835997916708,0.0168551163480708
+p53-Dependent G1 DNA Damage Response R-HSA-69563,p53-dependent G1 DNA-damage response,p53_senescence,1.9521273684535136,0.0060818655322582
+G1/S DNA Damage Checkpoints R-HSA-69615,G1/S DNA-damage checkpoint,p53_senescence,1.9660199985756,0.005562451550466
+G2/M Checkpoints R-HSA-69481,G2/M checkpoint,p53_senescence,1.9788278514396307,0.0058633443974941

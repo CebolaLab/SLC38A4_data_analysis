@@ -1,0 +1,10 @@
+.DS_Store
+.ipynb_checkpoints/
+*.pzfx
+
+# Scratch / debugging leftovers — not part of the manuscript codebase
+_archive/
+_superseded/
+_run_log/
+_gsea_tmp/
+_clone_relabel_backup/

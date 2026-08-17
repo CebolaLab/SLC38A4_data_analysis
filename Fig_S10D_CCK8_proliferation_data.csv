@@ -1,0 +1,13 @@
+time_h,group,clone,rel_proliferation
+0,WT,scramble ctrl,1.0
+23,WT,scramble ctrl,1.236567
+46,WT,scramble ctrl,1.673222
+70,WT,scramble ctrl,2.710486
+0,KO 1,C12,1.0
+23,KO 1,C12,1.159001
+46,KO 1,C12,1.489536
+70,KO 1,C12,2.105357
+0,KO 2,P1.7,1.0
+23,KO 2,P1.7,1.191745
+46,KO 2,P1.7,1.489217
+70,KO 2,P1.7,2.071886

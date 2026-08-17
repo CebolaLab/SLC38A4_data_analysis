@@ -1,0 +1,19 @@
+# Core dependencies used across the analysis notebooks (see README.md for the
+# figure-to-notebook mapping). Versions are not pinned here — if you need an
+# exact reproducible environment, run `pip freeze > requirements-lock.txt`
+# from your working environment and commit that alongside this file.
+
+numpy
+pandas
+scipy
+matplotlib
+statsmodels
+openpyxl
+requests
+pyliftover
+pyBigWig
+gseapy
+seaborn
+pyreadr
+adjustText
+pypdf

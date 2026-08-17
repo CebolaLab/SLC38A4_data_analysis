@@ -1,0 +1,28 @@
+# HNF4A isoform-specific RT-qPCR primers, mapped to GRCh38 (chr20), Ensembl gene ENSG00000101076.
+# Primer positions found by exact string match (Fwd primers to the + strand; Rev primers to the
+# reverse complement of the + strand) against Ensembl GRCh38 genomic sequence.
+# Both primer pairs use an isoform-specific Fwd primer (in the alternative first exon) paired with
+# a shared Rev primer in the common downstream exon (chr20:44,406,058-44,406,232) -- the classic
+# alternative-first-exon qPCR design, so the genomic Fwd-to-Rev span is NOT the amplicon size.
+# Predicted spliced (cDNA) amplicon size: P1 = 142 bp, P2 = 184 bp (both plausible SYBR Green
+# product sizes -- a good internal check that the mapping is correct).
+#
+# P1/P2 nomenclature checked against Argemi et al., Nat Commun 2019 (PMID 31311938,
+# DOI 10.1038/s41467-019-11004-3) -- the paper this manuscript actually cites (ref. 16) for the
+# HNF4A adult-to-foetal isoform switch in AH. Argemi et al. state: "the adult isoform is expressed
+# in the liver during adulthood (HNF4a-P1) while the fetal isoform is driven by a ~45 kb upstream
+# alternative promoter (HNF4a-P2)." This matches the mapping below exactly: the P1 first exon
+# (chr20:44,401,238-44,401,487) sits ~45.7 kb downstream (higher coordinate, more proximal to the
+# shared exon 2) of the P2 first exon (chr20:44,355,438-44,355,853), i.e. P2 is the more distal/
+# upstream, foetal promoter and P1 the more proximal/downstream, adult promoter -- consistent with
+# Argemi et al.'s "~45 kb upstream" description. No discrepancy with the manuscript's existing
+# P1=adult / P2=foetal convention.
+
+track name="HNF4A_P1_P2_primers" description="HNF4A P1(adult)/P2(fetal) isoform primers (GRCh38)" itemRgb="On"
+chr20	44401238	44401487	HNF4A_P1_first_exon(promoter,ADULT)	0	+	44401238	44401487	31,120,180
+chr20	44401458	44401478	HNF4A_P1_Fwd_primer(ADULT)	0	+	44401458	44401478	31,120,180
+chr20	44406150	44406170	HNF4A_P1_Rev_primer(ADULT)	0	-	44406150	44406170	31,120,180
+chr20	44355438	44355853	HNF4A_P2_first_exon(promoter,FETAL)	0	+	44355438	44355853	214,39,40
+chr20	44355801	44355821	HNF4A_P2_Fwd_primer(FETAL)	0	+	44355801	44355821	214,39,40
+chr20	44406169	44406189	HNF4A_P2_Rev_primer(FETAL)	0	-	44406169	44406189	214,39,40
+chr20	44406057	44406232	HNF4A_shared_exon2(both_isoforms)	0	+	44406057	44406232	120,120,120

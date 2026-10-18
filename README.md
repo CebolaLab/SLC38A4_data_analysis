@@ -1,8 +1,13 @@
 # SLC38A4 in alcoholic hepatitis — analysis code
 
-Analysis notebooks and data supporting the manuscript submitted to the *Journal of
-Hepatology* (Cebola lab, Imperial College London, in collaboration with Mark Thursz).
-<!-- TODO once available: paper title, author list, DOI/preprint link -->
+Analysis notebooks and data supporting:
+
+> **Cebola I, Tebeka NN, Atkinson SR, *et al.*
+> Systematic Interrogation of Hepatic SLC Transporters Identifies SLC38A4 as a Driver of
+> Severe Alcohol-Related Hepatitis.** Submitted to the *Journal of Hepatology*.
+
+Cebola lab, Imperial College London, in collaboration with Mark Thursz.
+<!-- TODO once available: DOI / preprint link -->
 
 ## Repository structure
 
@@ -24,7 +29,7 @@ subfolders) so each notebook's inputs/outputs are easy to find by filename.
 One notebook per dataset/analysis (not strictly one per panel) — panels that share a differential-expression
 run or an experiment are grouped into a single notebook. Figure and table numbers below were checked
 directly against the current main-figure artwork (`../02_Main_figures/source/Figure N.ai`) and the live
-Supplementary Information as of 2026-08-14. `../01_Manuscript/SI_figure_renumbering_crosswalk.md`,
+Supplementary Information. **Re-verified on 2026-10-02** against the final `Cebola_et_al-Manuscript.docx` and `Cebola_et_al-Supplementary_Information.docx`: the paper contains Fig. 1-5, Fig. S1-S12, Tables 1-2 and Tables S1-S15 (S11 split A/B/C), and every figure and table reference in this repository resolves to one of those. `../01_Manuscript/SI_figure_renumbering_crosswalk.md`,
 `../01_Manuscript/Figure_Table_renumbering_crosswalk.md` and `../01_Manuscript/Table_numbering_audit.md`
 are historical working documents from earlier renumbering passes — superseded by this table, kept for
 the record only.
@@ -44,7 +49,7 @@ the record only.
 | `Fig3H_transporter_concordance.ipynb` | Fig. 3H — System A/N amino-acid transporter concordance, SLC38A4-KO vs SAH liver. Builds its ReSOLUTE-annotated SLC differential-expression table transparently in the open from `ReSOLUTE_SLC_ 464_genes_annotation.xlsx`, `Fig3C_limma_KO_vs_WT_combined_mincount10.csv` and `InTEAM_AH_vs_normal_DESeq2.csv` (as `slc_de`) rather than reading a pre-merged file — no separate supplementary table is generated |
 | `Fig3G_S9AB_metabolomics.ipynb` | SLC38A4-overexpression metabolomics (ReSOLUTE, HEK293) — one dataset/enrichment run: Fig. 3G (System A substrates + urea-cycle intermediates, main figure), Fig. S9A (full 186-metabolite volcano plot), Fig. S9B (MetaboAnalyst pathway enrichment), Fig. S9C (KO transcripts vs OE metabolites, loss-/gain-of-function mirror), Table S7 (full ReSOLUTE targeted metabolomics results), Table S8 (full MetaboAnalyst pathway enrichment, all 81 pathways) |
 | `Fig4_KO_RNAseq_dedifferentiation.ipynb` | Fig. 4B (foetal HNF4A/P2 isoform fraction, main panel narrow bar + P1/P2-separate supplementary companion), Fig. S10A (identity/dedifferentiation marker RT-qPCR), Fig. S10D (CCK-8 proliferation assay — not a main-figure panel), Fig. 4D (cell-cycle/checkpoint gene-signature panel), Fig. 4E (pre-ranked GSEA, SAH-up/SAH-down vs KO transcriptome). Also contains an exploratory "candidate upstream pathways for dedifferentiation" panel not yet assigned a Supp. Fig. number (`SuppFig_dedifferentiation_pathway_candidates.pdf`, flagged in-notebook for the next SI renumbering pass). Fig. 4A (KO validation IF images) and Fig. 4C (HNF4A P1/P2 RNA-seq coverage tracks) are not produced by any notebook here — likely composed directly as images/browser tracks, not a code gap. |
-| `Fig5_LD_expansion_cCRE_filtering.ipynb` | Table S13 (CAGE evidence for SLC38A4 transcript isoforms), Table S14 (per-variant LD + cCRE evidence prioritising rs4994910), Table S15 (per-dataset/biosample chromatin evidence at rs4994910). Also produces an unnumbered CAGE locus plot (`SuppFig_SLC38A4_CAGE_locus_scan.pdf`). Does not produce Fig. 5A itself (the genome-browser locus figure) — that appears to be composed separately from this notebook's evidence tables. |
+| `Fig5_LD_expansion_cCRE_filtering.ipynb` | Table S12 (CAGE evidence for SLC38A4 transcript isoforms), Table S13 (per-variant LD + cCRE evidence prioritising rs4994910), Table S14 (per-dataset/biosample chromatin evidence at rs4994910). Also produces an unnumbered CAGE locus plot (`SuppFig_SLC38A4_CAGE_locus_scan.pdf`). Does not produce Fig. 5A itself (the genome-browser locus figure) — that appears to be composed separately from this notebook's evidence tables. |
 | `Fig5B_luciferase_mixed_model.ipynb` | Fig. 5B — luciferase reporter assay, linear mixed model |
 | `Table1_variant_coordinate_liftover.ipynb` | Table 1 — GRCh37→GRCh38 variant liftover |
 
@@ -55,7 +60,7 @@ notebook's version is the current, more polished one actually embedded in `Figur
 SI, or README content outside this repo referenced the old file.
 
 Fig. 5C (transcription-factor motif-disruption panel, MotifBreakR) has a finished data file
-(`Table_S16_TF_motif_disruption.xlsx`, generated 2026-08-14) but no notebook/script producing it in
+(`Table_S15_TF_motif_disruption.xlsx`, generated 2026-08-14) but no notebook/script producing it in
 this repo — reproducibility gap, being resolved separately (not by this repo's maintainer).
 Fig. 2B (Aizarani et al. scRNA-seq/Seurat pipeline) has the same kind of gap: fully described in SI
 Methods, no notebook. Both are tracked outside this README.

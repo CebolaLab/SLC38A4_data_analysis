@@ -8,6 +8,6 @@ Cap-dependent Translation Initiation R-HSA-72737,Cap-dependent translation initi
 Cellular Senescence R-HSA-2559583,Cellular senescence,p53_senescence,1.7271211465748657,0.0256165531929355
 Stabilization Of P53 R-HSA-69541,Stabilization of p53,p53_senescence,1.7504104145155146,0.0207548584167443
 Senescence-Associated Secretory Phenotype (SASP) R-HSA-2559582,Senescence-associated secretory phenotype,p53_senescence,1.7767835997916708,0.0168551163480708
-p53-Dependent G1 DNA Damage Response R-HSA-69563,p53-dependent G1 DNA-damage response,p53_senescence,1.9521273684535136,0.0060818655322582
+p53-Dependent G1 DNA Damage Response R-HSA-69563,p53-dependent G1 DNA-damage response,p53_senescence,1.952127368453514,0.0060818655322582
 G1/S DNA Damage Checkpoints R-HSA-69615,G1/S DNA-damage checkpoint,p53_senescence,1.9660199985756,0.005562451550466
 G2/M Checkpoints R-HSA-69481,G2/M checkpoint,p53_senescence,1.9788278514396307,0.0058633443974941

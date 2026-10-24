@@ -22,9 +22,9 @@
 set -euo pipefail
 
 # ---- paths (EDIT) -----------------------------------------------------------
-BAM_DIR=/rds/general/user/idossant/projects/alcoholichepatitis/live/users/sratkinson/SLC38A4/X204SC21115349-Z01-F002/bam
-OUT_DIR=/rds/general/user/idossant/projects/cebolalab_collab/live/SLC38A4_MThursz_collab/SLC38A4_KO_reanalysis/coverage
-GTF=/rds/general/user/idossant/projects/cebola_lab_general/live/reference-genomes/ensembl-v96/Homo_sapiens.GRCh38.96.gtf   # Ensembl 96; chroms are '20' (no 'chr')
+BAM_DIR=/path/to/SLC38A4_KO_RNAseq/bam
+OUT_DIR=/path/to/output/coverage
+GTF=/path/to/reference/Homo_sapiens.GRCh38.96.gtf   # Ensembl 96; chroms are '20' (no 'chr')
 mkdir -p "$OUT_DIR"/{per_sample,per_group,merged_bam}
 
 # ---- environment ------------------------------------------------------------
@@ -39,11 +39,11 @@ mkdir -p "$OUT_DIR"/{per_sample,per_group,merged_bam}
 #   wget -q https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
 #   bash Miniforge3-Linux-x86_64.sh -b -p $HOME/miniforge3
 #   source $HOME/miniforge3/etc/profile.d/conda.sh
-#   conda create -y -p /rds/general/user/idossant/home/conda_environments/coverage \
+#   conda create -y -p $HOME/conda_environments/coverage \
 #          -c bioconda -c conda-forge \
 #          deeptools'>=3.5' samtools rseqc ucsc-gtftogenepred ucsc-genepredtobed pygenometracks
 CONDA_ROOT="$HOME/miniforge3"                                                   # <-- EDIT if base conda is elsewhere
-ENV_PREFIX="/rds/general/user/idossant/home/conda_environments/coverage"
+ENV_PREFIX="$HOME/conda_environments/coverage"
 source "$CONDA_ROOT/etc/profile.d/conda.sh"
 
 # ONE-TIME env setup on a login node (after `module load miniforge/3`):

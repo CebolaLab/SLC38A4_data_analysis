@@ -13,7 +13,7 @@ set -euo pipefail
 # ---- A. gene model: extract HNF4A from a GENCODE/Ensembl GTF ----------------
 # Use the SAME annotation build as your BAMs (GRCh38 here). Point GTF at your
 # reference, e.g. gencode.v44.primary_assembly.annotation.gtf.
-GTF=/rds/general/user/idossant/projects/cebola_lab_general/live/reference-genomes/ensembl-v96/Homo_sapiens.GRCh38.96.gtf   # Ensembl 96
+GTF=/path/to/reference/Homo_sapiens.GRCh38.96.gtf   # Ensembl 96
 if [[ ! -f hnf4a.gtf ]]; then
   awk -F'\t' '$3=="transcript" || $3=="exon"' "$GTF" | grep 'gene_name "HNF4A"' > hnf4a.gtf
   echo "hnf4a.gtf: $(wc -l < hnf4a.gtf) lines"

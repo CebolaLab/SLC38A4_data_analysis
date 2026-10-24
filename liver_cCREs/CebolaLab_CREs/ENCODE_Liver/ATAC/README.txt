@@ -1,7 +1,7 @@
 Updated on 12/06/2025
 Updated by Hannah
 
-Copying ATAC-seq files from /rds/general/project/cebolalab_liver_regulomes/live/Lowri/ to be stored here. Peak calling carried out by Lowri.
+Copying ATAC-seq files from an internal lab directory to be stored here. Peak calling carried out by Lowri.
 
 ### Peak calling for individual datasets
 Scripts are contained within each folder (e.g. ENCSR516CPW_liver_right_lobe_female_DONE/ENCSR516CPW_macs2.sh) and call macs2 to define peaks in narrow mode:
@@ -33,7 +33,7 @@ $ macs2 callpeak -f BAMPE --nomodel \
 
 The narrowPeak files contain redundant peaks, so I created sorted and non-redundant bed files:
 
-$ chrName=/rds/general/project/cebola_lab_general/live/reference-genomes/GRCh38_gencode44/chrName.txt 
+$ chrName=/path/to/reference/GRCh38_gencode44/chrName.txt 
 $ bedtools sort -g "${chrName}" -i pooled_ENCODE_wholeLiver_peaks.narrowPeak | cut -f 1-3 | uniq > pooled_ENCODE_wholeLiver_peaks_SORTED.bed
 $ bedtools sort -g "${chrName}" -i ENCSR516CPW_peaks.narrowPeak | cut -f 1-3 | uniq > ENCSR516CPW_peaks_SORTED.bed
 $ bedtools sort -g "${chrName}" -i ENCSR607BTF_peaks.narrowPeak | cut -f 1-3 | uniq > ENCSR607BTF_peaks_SORTED.bed

@@ -9,3 +9,4 @@ _run_log/
 _gsea_tmp/
 _clone_relabel_backup/
 _backups/
+_backup_*

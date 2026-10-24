@@ -10,3 +10,10 @@ _gsea_tmp/
 _clone_relabel_backup/
 _backups/
 _backup_*
+
+# Exploratory and superseded panel exports — regenerated locally by the notebooks,
+# deliberately not published
+Fig3D_KO_pathway_enrichment_v1_manual.pdf
+Explore_*.pdf
+Fig3A_KO_confirmation_data_clean.csv
+Fig2D_SLC38A4_SAH_mediators.csv

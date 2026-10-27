@@ -1,7 +1,6 @@
 {
   "generated_utc": "2026-07-30T10:26:26+00:00",
   "notebook_version": "v2",
-  "supersedes": "_run_log/Table1_liftover_run1_incomplete.ipynb (aborted at chain download)",
   "source_assembly": "GRCh37/hg19",
   "target_assembly": "GRCh38/hg38",
   "sources": {

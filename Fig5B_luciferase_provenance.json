@@ -1,6 +1,6 @@
 {
   "generated": "2026-08-13T21:46:10Z",
-  "source_file": "luciferase_data/Nelisa_luciferase_metadata.xlsx",
+  "source_file": "luciferase_data/luciferase_plate_metadata.xlsx",
   "sheet": "Figure 2C",
   "model": "log2(firefly/renilla) ~ construct + (1|experiment) + (1|experiment:construct), REML",
   "outlier_exclusion": "Dixon test flags from the source file; excluded from model and figure",

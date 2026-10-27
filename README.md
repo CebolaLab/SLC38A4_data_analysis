@@ -3,7 +3,7 @@
 Analysis notebooks and data supporting:
 
 > **Cebola I, Tebeka NN, Atkinson SR, *et al.*
-> Systematic Interrogation of Hepatic SLC Transporters Identifies SLC38A4 as a Driver of
+> Systematic Analysis of Hepatic SLC Transporters Identifies SLC38A4 as a Driver of
 > Severe Alcohol-Related Hepatitis.** Submitted to the *Journal of Hepatology*.
 
 Cebola lab, Imperial College London.

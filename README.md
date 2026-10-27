@@ -97,4 +97,5 @@ figures in the paper. Deleting a cache file forces a live re-query for that anal
 
 ## Status
 
-Repository prepared for peer review (private). Will be made public on acceptance.
+This repository accompanies the manuscript submitted to the *Journal of Hepatology*, and is
+made public at submission. A DOI will be added to the citation above once the paper is published.
